@@ -3,4 +3,4 @@
 first try of using HTML5 Audio API )
 
 Summary:
-  1. Нou should not use BufferSource for long tracks 
+  1. You should not use BufferSource for long tracks (it eats too lot of memory)
