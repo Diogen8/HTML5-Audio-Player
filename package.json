@@ -6,8 +6,12 @@
     "gulp": "^3.9.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.6.1",
+    "bootstrap": "^4",
     "browser-sync": "^2.23.7",
     "gulp-autoprefixer": "^4.1.0",
+    "gulp-babel": "^7.0.1",
     "gulp-clean-css": "^3.9.0",
     "gulp-imagemin": "^4.0.0",
     "gulp-less": "^3.5.0",
@@ -16,8 +20,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^4.3.11",
     "imagemin-pngquant": "^5.0.1",
-    "rimraf": "^2.6.2",
-    "bootstrap": "^4"
+    "rimraf": "^2.6.2"
   },
   "author": "Diogen8",
   "license": "ISC",

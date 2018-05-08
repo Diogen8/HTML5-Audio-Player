@@ -1,6 +1,6 @@
 'use strict';
 
-var context = new (window.AudioContext || window.webkitAudioContext)();
+var context = new (window.AudioContext || window.webkitAudioContext)(); 
 
 var buffer,sourceNode;
 

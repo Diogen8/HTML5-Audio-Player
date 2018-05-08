@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "normalize.css": "*",
-      "boo"
+    "normalize.css": "*"
   }
 }
