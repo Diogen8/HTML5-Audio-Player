@@ -1,0 +1,36 @@
+{
+  "name": "html5-audio-player",
+  "version": "1.0.0",
+  "description": "simple player on html5",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.7",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-less": "^3.5.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "imagemin-pngquant": "^5.0.1",
+    "rimraf": "^2.6.2",
+    "bootstrap": "^4"
+  },
+  "author": "Diogen8",
+  "license": "ISC",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diogen8/HTML5-Audio-Player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Diogen8/HTML5-Audio-Player/issues"
+  },
+  "homepage": "https://github.com/Diogen8/HTML5-Audio-Player#readme"
+}

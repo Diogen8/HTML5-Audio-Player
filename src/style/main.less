@@ -1,0 +1,316 @@
+@import (css) "bootstrap.css";
+
+@activeTrack_gr_1: #dfdfdf;
+@activeTrack_gr_2: #a8bbdc;
+@activeTrack_gr_3: #44a7ff;
+
+@progress_color_1: #dfdfdf;
+@range_color_1:#a8bbdc;
+
+@button_color_1: #e6e6e6;
+
+@button_active_color:  white;
+
+@dark: rgba(0,0,0,0.38);
+@dark_2: rgba(0,0,0,0.18);
+
+@main_1: #ada996;
+@main_2: #f2f2f2;
+@main_3: #dbdbdb;
+@main_4: #eaeaea;
+
+body {
+    margin-top: 20px;
+    background-color: black;
+}
+
+.container {
+    .player {
+        padding: 20px 15px;;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #dfdfdf;
+        border-radius: 10px;
+        
+        background: linear-gradient(to right, @main_1, @main_2, @main_3, @main_4);
+    }
+    .player__controls {
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+        padding: 10px 20px;
+        align-items: center;
+        
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+
+    }
+    
+    .controls__button{
+        border: 1px solid #dfdfdf;
+        border-radius: 50%;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        outline: none;
+        box-shadow: 2px 2px 5px black;
+        background-color: @button_color_1;
+        color:@dark;
+        text-shadow: 1px 1px 2px white;
+        
+        &:disabled {
+            color: @dark_2;
+        }
+        
+        &:active {
+            box-shadow: 1px 1px 1px black;
+        }
+        
+        &:hover, &:focus {
+            color:@button_active_color;
+            text-shadow: 1px 1px 2px @dark;
+        }
+        
+        &.active {
+            pointer-events: none;
+            color:@button_active_color;
+            text-shadow: 1px 1px 2px @dark;
+        }
+        
+
+    }
+    
+    .controls__play {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        .glyphicon {
+            top: 3px;
+            left: 3px;
+        }
+    }
+    .controls__pause {
+         width: 50px;
+        height: 50px;
+        font-size: 22px;
+        .glyphicon {
+            top: 2px;
+            left: 2px;
+        }
+    }
+    .controls__stop {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+
+        .glyphicon {
+            top: 2px;
+        }
+    }
+    .controls__next {
+        .glyphicon {
+            left: 3px;
+            top: 2px;
+        }
+    }
+    .controls__prev {
+        .glyphicon {
+            right: 4px;
+            top: 2px;
+        }
+    }
+    .volume__container {
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+        .glyphicon {
+            color: @dark;
+            font-size: 20px;
+        }
+    }
+    .controls__volume {
+        margin: 0 10px;
+        height: 3px;
+        width: 200px;
+        -webkit-appearance: none;
+        background-color: @dark_2;
+
+
+        
+        &:focus {
+            outline: none;
+        }
+        
+        &::-webkit-slider-runnable-track {
+            height: 1px;
+            -webkit-appearance: none;
+        }
+
+        &::-webkit-slider-thumb {
+            width: 20px;
+            -webkit-appearance: none;
+            height: 20px;
+            cursor: pointer;
+            background: @button_color_1;
+            border-radius: 50%;
+            top: -10px;
+            position: relative;
+            box-shadow: 1px 1px 2px black;
+            border:  1ps solid #dfdfdf;
+        }
+    }
+    
+    
+
+    .time-line {
+        display: flex;
+        width: 90%;
+        height: 40px;
+        background: 
+            linear-gradient(to bottom,@dark 0%,@dark_2 48%,@dark_2 53%, @dark 100%),
+            linear-gradient(to right,@main_1 0%,@main_1 0%, @main_4 0%, @main_4 100%);
+        filter: blur(10%);
+        margin: 10px 0;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow:inset 1px -1px 1px black;
+        
+    }
+    .timer {
+          display: flex;
+          position: absolute;
+          font-size: 16px;
+           z-index: 1;
+        color: @button_active_color;
+    }
+    .minutes {
+        width: 20px;
+    }
+    .seconds {
+        width: 20px;
+        margin-left: 3px;
+    }
+    .miliseconds {
+        font-size: 8px;
+    }
+    .controls__rewind {
+         height: 100%;
+            width: 100%;
+           background-color: transparent;
+           z-index: 2;
+        border: 0px solid transparent;
+        border-radius: 15px;
+    }
+    .player__playlist {
+        border: 1px solid @dark_2;
+        width: 90%;
+
+        border-radius: 5px;
+        overflow-x: hidden;
+    }
+    .playlist__controls {
+        padding: 0px 5px;
+        padding-top: 3px;
+        border-bottom: 1px solid @dark_2;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    #file {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        &+label {
+            font-size: 24px;
+            color: #00000061;
+            cursor: pointer;
+            
+        }
+        &:focus + label, & + label:hover {
+            color: #44a7ffab;
+        }
+    }
+    .playlist__tracks {
+        background-color: @dark_2;
+        height: 66vh;
+        overflow-y: scroll;
+        width: 105%;
+        box-shadow: inset 1px -1px 1px black;
+    }
+    .playlist__item {
+        padding: 10px;
+        padding-right: 50px;
+        border-bottom: 1px solid @dark;
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        font-size: 24px;
+        justify-content: space-between;
+        cursor: pointer;
+        color: @button_active_color;
+        text-shadow: 1px 1px 1px black;
+        &:hover {
+            background-color:@dark_2;
+        }
+    }
+    .track {
+        &.active {
+            color: @button_color_1;
+            box-shadow: 
+                inset 0px 1px 2px black,
+                inset 0px -1px 2px black;
+            background: linear-gradient(to right, @dark, @main_3, @dark_2);
+            background-size: 600% 600%;
+
+            -webkit-animation: activeTrack 12s ease infinite;
+            -moz-animation: activeTrack 12s ease infinite;
+            -o-animation: activeTrack 12s ease infinite;
+            animation: activeTrack 12s ease infinite;
+        }
+    }
+    .track__name {
+        max-width: 80%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        user-select: none;
+    }
+    .track__duration {
+        max-width: 20%;
+        user-select: none;
+    }
+}
+
+
+@-webkit-keyframes activeTrack {
+    0%{background-position:77% 0%}
+    50%{background-position:24% 100%}
+    100%{background-position:77% 0%}
+}
+@-moz-keyframes activeTrack {
+    0%{background-position:77% 0%}
+    50%{background-position:24% 100%}
+    100%{background-position:77% 0%}
+}
+@-o-keyframes activeTrack {
+    0%{background-position:77% 0%}
+    50%{background-position:24% 100%}
+    100%{background-position:77% 0%}
+}
+@keyframes activeTrack { 
+    0%{background-position:77% 0%}
+    50%{background-position:24% 100%}
+    100%{background-position:77% 0%}
+}

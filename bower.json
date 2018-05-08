@@ -1,0 +1,21 @@
+{
+  "name": "html5-audio-player",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Diogen8 <diogendota@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+      "boo"
+  }
+}
